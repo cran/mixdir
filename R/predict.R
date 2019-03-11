@@ -3,9 +3,10 @@
 #' Predict the class of a new observation.
 #'
 #' @param object the result from a call to \code{mixdir()}. It needs to have the
-#'   fields lambda and category_prob. lambda is a vector of probabilities for each category.
+#'   fields lambda, category_prob and na_handle. lambda is a vector of probabilities for each category.
 #'   category_prob a list of a list of a named vector with probabilities
-#'   for each feature, latent class and possible category.
+#'   for each feature, latent class and possible category. na_handle must either be
+#'   "ignore" or "category" depending how NA's should be handled.
 #' @param newdata a named vector with a single new observation or a data.frame
 #'   with the same structure as the original data used for fitting the model.
 #'   Missing features or features not encountered during training are replaced by
@@ -255,10 +256,12 @@ find_typical_features <- function(mixdir_obj, top_n=10){
 #' @seealso \code{\link{find_predictive_features}} \code{\link{find_typical_features}}
 #'
 #' @examples
+#'   \donttest{
 #'   data("mushroom")
 #'   res <- mixdir(mushroom[1:100, ], n_latent=20)
 #'   find_defining_features(res, mushroom[1:100, ], n_features=3)
 #'   find_defining_features(res, mushroom[1:100, ], n_features=Inf)
+#'   }
 #' @export
 find_defining_features <- function(mixdir_obj, X,
                                   n_features=Inf, measure=c("JS", "ARI"),
@@ -341,18 +344,19 @@ find_defining_features <- function(mixdir_obj, X,
 #' @param category_prob a list over all features containing a
 #'   list of the probability of each answer for every class. It
 #'   is usually obtained from the result of a call to \code{mixdir()}.
-#' @param classes which latent classes are plotted. By default all.
+#' @param classes numerical vector specifying which latent classes are plotted. By default all.
 #'
 #' @examples
-#'   data("mushroom")
-#'   res <- mixdir(mushroom[1:100, ], n_latent=4)
-#'   plot_features(c("bruises", "edible"), res$category_prob)
+#'   \donttest{
+#'     data("mushroom")
+#'     res <- mixdir(mushroom[1:100, ], n_latent=4)
+#'     plot_features(c("bruises", "edible"), res$category_prob)
 #'
-#'   res2 <- mixdir(mushroom[1:100, ], n_latent=20)
-#'   def_feats <- find_defining_features(res2, mushroom[1:100, ], n_features=Inf)
-#'   plot_features(def_feats$features[1:6], category_prob = res2$category_prob,
-#'                classes=which(res$lambda > 0.01))
-#
+#'     res2 <- mixdir(mushroom[1:100, ], n_latent=20)
+#'     def_feats <- find_defining_features(res2, mushroom[1:100, ], n_features=Inf)
+#'     plot_features(def_feats$features[1:6], category_prob = res2$category_prob,
+#'                   classes=which(res$lambda > 0.01))
+#'    }
 #' @export
 plot_features <- function(features, category_prob,
                                    classes=seq_len(length(category_prob[[1]]))){
