@@ -1,9 +1,11 @@
 Package: mixdir
 Type: Package
 Title: Cluster High Dimensional Categorical Datasets
-Version: 0.2.0
-Authors@R: c(person("Constantin", "Ahlmann-Eltze", email = "artjom31415@googlemail.com", role = c("aut", "cre")),
-             person("Christopher", "Yau", email="c.yau@bham.ac.uk", role="ths"))
+Version: 0.3.0
+Authors@R: c(person("Constantin", "Ahlmann-Eltze", email = "artjom31415@googlemail.com", role = c("aut", "cre"),
+                    comment = c(ORCID = "0000-0002-3762-068X")),
+             person("Christopher", "Yau", email="c.yau@bham.ac.uk", role="ths",
+                    comment = c(ORCID = "0000-0001-7615-8523")))
 Description: Scalable Bayesian clustering of categorical datasets. The package implements a hierarchical Dirichlet 
     (Process) mixture  of multinomial distributions. It is thus a probabilistic latent class model (LCM) and can be used
     to reduce the  dimensionality of hierarchical data and cluster individuals into latent classes. It can automatically
@@ -22,9 +24,10 @@ Imports: extraDistr, Rcpp
 Depends: R (>= 2.10)
 LinkingTo: Rcpp
 NeedsCompilation: yes
-Packaged: 2019-03-11 17:14:06 UTC; constantin
-Author: Constantin Ahlmann-Eltze [aut, cre],
-  Christopher Yau [ths]
+Packaged: 2019-09-20 14:51:59 UTC; ahlmanne
+Author: Constantin Ahlmann-Eltze [aut, cre]
+    (<https://orcid.org/0000-0002-3762-068X>),
+  Christopher Yau [ths] (<https://orcid.org/0000-0001-7615-8523>)
 Maintainer: Constantin Ahlmann-Eltze <artjom31415@googlemail.com>
 Repository: CRAN
-Date/Publication: 2019-03-11 20:40:09 UTC
+Date/Publication: 2019-09-20 15:10:05 UTC

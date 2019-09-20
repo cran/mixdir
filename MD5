@@ -1,11 +1,11 @@
-74d0b981b7ee2c353b8b1b4c1accee58 *DESCRIPTION
+5e6e06470b28abba2c44c5e1295a6065 *DESCRIPTION
 df426414aeb2c3d73cbef44a95fe7b95 *NAMESPACE
-72c1678493980c21e9cdac23676a2408 *NEWS.md
+319aec7ac00634c97e7c00b1084ae16d *NEWS.md
 db0a13aa941a1da863a4119ca899f366 *R/RcppExports.R
 0ba49ec97c437c485413ced1e2a0a223 *R/data.R
 5754b64ee595da8a61997d92573e8486 *R/mixdir.R
-72a55287aa7bddf7efe9ffb2188a95e9 *R/mixdir_vi.R
-b2f839eb0aea3c474e34de7add82b839 *R/mixdir_vi_dp.R
+8a73931302bc954aa44ba8561e2598c5 *R/mixdir_vi.R
+92d404db12c63ed90b2d0ba0e0a5d75d *R/mixdir_vi_dp.R
 3013f1475a9960f740bda58c8cd4dc7b *R/predict.R
 37b94c8c4dcdf4b8f0856401ee301cfd *README.md
 482076cf4402c1807147287d39bcdee4 *data/mushroom.rda
@@ -27,5 +27,5 @@ dd1b65251c79a7c5391a026e0ab079dd *src/RcppExports.cpp
 dbb3609fdb8d7911238142e70635efd6 *src/mixdir_impl.cpp
 7bd95b0acb1583226f59e97bdb46a040 *tests/testthat.R
 d7020eb3713ca4cd0ccc1cc4e47d27aa *tests/testthat/helper.R
-431d27effff8817ca4f6cd8682928543 *tests/testthat/test-mixdir.R
+a7502bf100226ef5db5eb64fefabc756 *tests/testthat/test-mixdir.R
 374c5af753cbe4c746038a21adcad8b3 *tests/testthat/test_cpp.R
